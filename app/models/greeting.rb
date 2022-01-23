@@ -1,4 +1,6 @@
-class Greeting < ApplicationRecord 
-    validates :title, presence: true
-    validates :message, presence: true
+# frozen_string_literal: true
+
+class Greeting < ApplicationRecord
+  validates :name, presence: true
+  validates :message, presence: true
 end

@@ -1,17 +1,20 @@
-<p style="color: green"><%= notice %></p>
-<div class="row mt-4">
-  <div class="col-lg-4 offset-lg-4">
-    <h1 class="text-center">Greetings</h1>
-    <div id="greetings" class="mb-4">
-      <% @greetings.each do |greeting| %>
-        <%= render greeting %>
-        <p>
-          <%= link_to "Show this greeting", greeting,  class: "btn btn-warning" %>
-        </p>
-      <% end %>
+<p id="notice"><%= notice %></p>
+<br/>
+<% @greetings.each do |greeting| %>
+  <div class="media">
+    <img src="<%= gravatarized_url(greeting.name) %>"
+         class="align-self-start mr-3">
+    <div class="media-body">
+      <br />
+      <h5 class="mt-0"><%= greeting.name %></h5>
+      <br />
+      <%= greeting.message %>
     </div>
-    <%= link_to "New greeting", new_greeting_path, class: "btn btn-info btn-lg" %>
   </div>
-  </div>
+  <br/>
+<% end %>
+
+
+
 
 
